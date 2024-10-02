@@ -1,0 +1,167 @@
+région: 
+  question: Quelle est votre région de résidence ?
+  une possibilité:
+    - grand-est
+    - nouvelle aquitaine
+    - auvergne-rhône-alpes
+    - normandie
+    - bourgogne-franche-comté
+    - bretagne
+    - centre-val de loire
+    - corse
+    - ile-de-france
+    - occitanie
+    - hauts-de-france
+    - pays de la loire
+    - provence-alpes-côte d'azur
+    - guadeloupe
+    - guyane
+    - la réunion
+    - martinique
+    - mayotte
+  avec:
+
+    grand-est:
+      titre: Grand-Est
+      valeur: région = 'grand-est'
+      avec:
+        prix cheval fiscal:
+          valeur: 48.00€/CV
+          remplace: prix cheval fiscal
+
+    nouvelle aquitaine:
+      titre: Nouvelle Aquitaine
+      valeur: région = 'nouvelle aquitaine'
+      avec:
+        prix cheval fiscal:
+          valeur: 45.00€/CV
+          remplace: prix cheval fiscal
+
+    auvergne-rhône-alpes:
+      titre: Auvergne-Rhône-Alpes
+      valeur: région = 'auvergne-rhône-alpes'
+      avec:
+        prix cheval fiscal:
+          valeur: 43.00€/CV
+          remplace: prix cheval fiscal
+
+    normandie:
+      titre: Normandie
+      valeur: région = 'normandie'
+      avec:
+        prix cheval fiscal:
+          valeur: 46.00€/CV
+          remplace: prix cheval fiscal
+
+    bourgogne-franche-comté:
+      titre: Bourgogne-Franche-Comté
+      valeur: région = 'bourgogne-franche-comté'
+      avec:
+        prix cheval fiscal:
+          valeur: 55.00€/CV
+          remplace: prix cheval fiscal
+
+    bretagne:
+      titre: Bretagne
+      valeur: région = 'bretagne'
+      avec:
+        prix cheval fiscal:
+          valeur: 55.00€/CV
+          remplace: prix cheval fiscal
+
+    centre-val de loire:
+      titre: Centre - Val de Loire
+      valeur: région = 'centre-val de loire'
+      avec:
+        prix cheval fiscal:
+          valeur: 55.00€/CV
+          remplace: prix cheval fiscal
+
+    corse:
+      titre: Corse
+      valeur: région = 'corse'
+      avec:
+        prix cheval fiscal:
+          valeur: 27.00€/CV
+          remplace: prix cheval fiscal
+      
+    ile-de-france:
+      titre: Ile-de-France
+      valeur: région = 'ile-de-france'
+      avec:
+        prix cheval fiscal:
+          valeur: 54.95€/CV
+          remplace: prix cheval fiscal
+      
+    occitanie:
+      titre: Occitanie
+      valeur: région = 'occitanie'
+      avec:
+        prix cheval fiscal:
+          valeur: 47.00€/CV
+          remplace: prix cheval fiscal
+        
+    hauts-de-france:
+      titre: Hauts-de-France
+      valeur: région = 'hauts-de-france'
+      avec:
+        prix cheval fiscal:
+          valeur: 36.20€/CV
+          remplace: prix cheval fiscal
+      
+    pays de la loire:
+      titre: Pays de la Loire
+      valeur: région = 'pays de la loire'
+      avec:
+        prix cheval fiscal:
+          valeur: 51.00€/CV
+          remplace: prix cheval fiscal
+      
+    provence-alpes-côte d'azur:
+      titre: Provence-Alpes-Côte d'Azur
+      valeur: région = 'provence-alpes-côte d'azur'
+      avec:
+        prix cheval fiscal:
+          valeur: 51.20€/CV
+          remplace: prix cheval fiscal
+      
+    guadeloupe:
+      titre: Guadeloupe
+      valeur: région = 'guadeloupe'
+      avec:
+        prix cheval fiscal:
+          valeur: 41.00€/CV
+          remplace: prix cheval fiscal
+        
+    guyane:
+      titre: Guyane
+      valeur: région = 'guyane'
+      avec:
+        prix cheval fiscal:
+          valeur: 42.50€/CV
+          remplace: prix cheval fiscal
+        
+    la réunion:
+      titre: La Réunion
+      valeur: région = 'la réunion'
+      avec:
+        prix cheval fiscal:
+          valeur: 51.00€/CV
+          remplace: prix cheval fiscal
+      
+    martinique:
+      titre: Martinique
+      valeur: région = 'martinique'
+      avec:
+        prix cheval fiscal:
+          valeur: 30.00€/CV
+          remplace: prix cheval fiscal
+        
+    mayotte:
+      titre: Mayotte
+      valeur: région = 'mayotte'
+      avec:
+        prix cheval fiscal:
+          valeur: 30.00€ /CV
+          remplace: prix cheval fiscal
+        

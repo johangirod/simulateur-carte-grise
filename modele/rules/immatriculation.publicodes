@@ -1,0 +1,143 @@
+cout certificat immatriculation: 
+  somme: 
+    - Y1
+    - Y2
+    - Y3
+    - Y4
+    - Y5
+  avec: 
+    Y1: 
+      titre: Taxe régionale (Y1)
+      produit:
+        - véhicule . puissance
+        - tarif cheval fiscal
+    Y2: 
+      applicable si: 
+        une de ces conditions:
+          - véhicule . type = 'utilitaire'
+          - véhicule . PTAC > 3500 kg
+      titre: Taxe parafiscale
+      grille: 
+        assiette: véhicule . PTAC
+        tranches: 
+          - montant: 34.00€
+            plafond: 3500kg
+          - montant: 127.00€
+            plafond: 6000kg
+          - montant: 189.00€
+            plafond: 11000kg
+          - montant: 285.00€
+    Y3: 
+      titre: Taxe pollution (Y3)
+      non applicable si: oui # à implémenter
+    Y4: 
+      titre: Taxe fixe
+      valeur: 11€
+    Y5: 
+      titre: Redevance d’acheminement
+      valeur: 2.76€
+
+véhicule: 
+  avec:
+    # neuf ou importé: 
+    #   question: "Précisez si le véhicule a été"
+    #   type: "boolean"
+    #   une possibilité: 
+    #     - neuf
+    #     - importé
+    #   avec: 
+    #     neuf: 
+    #       titre: "Acheté neuf en France ou à l'étranger"
+    #     importé:
+    #       titre: "Importé en France après avoir été immatriculé dans un autre pays"
+    PTAC:
+      titre: PTAC (F.2)
+      unité: kg
+      type: number
+      question: "Quel est le poids total autorisé en charge (PTAC) de votre véhicule ?"
+      description: |
+        Le poids total autorisé en charge (PTAC) est mentionné à la rubrique « F.2 » de la carte grise.
+
+        Le PTAC est la somme des masses maximales autorisées, à vide et en charge, du véhicule. Il est exprimé en kilogrammes.
+
+        Le PTAC est utilisé pour le calcul de la taxe régionale et de la taxe parafiscale.
+    type: 
+      applicable si: PTAC <= 3500 kg
+
+      question: Quel est le type de votre véhicule ? 
+      description: |
+        Le genre national du véhicule est mentionné à la rubrique «J.1 » de la carte grise.
+
+        Le montant du certificat varie selon le genre du véhicule.
+
+      une possibilité: 
+        - tourisme
+        - utilitaire
+        - camping-car
+        - petite moto
+        - grosse moto
+        - tricyle
+        - quad
+        - cyclomoteur trois roue
+        - petit cyclomoteur
+
+      avec: 
+        tourisme: 
+          titre: Véhicule de tourisme (VT ou M1) ex-Voiture particulière (VP)
+        utilitaire: 
+          titre: Camionnette, Utilitaire pour le transport de marchandises (CTTE, N1)
+        camping-car: 
+          titre: Camping-car et autre véhicule VASP
+        petite moto: 
+          titre: Moto jusqu'à 125 cm3 (MTL, L3e, L4e)
+        grosse moto: 
+          titre: Moto de plus de 125 cm3 (MTT1, MTT2, L3e, L4e)
+        tricyle: 
+          titre: Tricycle à moteur (TM, L5e)
+        quad: 
+          titre: Quad et Quadricycle à moteur (QM, L6e, L7e)
+        cyclomoteur trois roue: 
+          titre: Cyclomoteur à 3 roues (CYCL, L2e)
+        petit cyclomoteur: 
+          titre: Cyclomoteur à 2 roues ou à 3 roues (inférieur ou égal à 50 cm3) non carrossé (CL, L1e, L2e)
+          
+    puissance:
+      titre: puissance administrative 
+      question: Puissance administrative nationale (P.6) en CV
+      description: |
+        La puissance administrative nationale, appelée aussi puissance fiscale (en chevaux vapeur) est mentionnée à la rubrique «P.6» de la carte grise.
+
+        La puissance administrative est utilisée pour le calcul de la taxe CO2 ou du malus écologique si votre véhicule n’a pas fait l’objet d’une réception européenne.
+
+      unité: CV
+      type: number
+    
+    energie: 
+      question: "Quelle est l'énergie de votre véhicule ?"
+      description: |
+        Le type de carburant ou la source d'énergie utilisé par le véhicule est mentionné à la rubrique «P.3 » de la carte grise.
+
+        Le coût du certificat d’immatriculation inclut notamment une taxe destinée à la région dans laquelle se situe le domicile du propriétaire du véhicule. Le conseil régional ou l’assemblée de Corse peuvent prévoir une exonération totale ou partielle (50 %) pour les véhicules fonctionnant exclusivement ou non au moyen du GPL, du superéthanol, du gaz naturel.
+
+        À noter : les véhicules propres sont maintenant exonérés totalement de cette taxe.
+
+      une possibilité: 
+        - essence
+        - diesel
+        - électrique
+        - hybride
+        - autre
+      avec: 
+        essence: 
+          titre: Essence
+        diesel: 
+          titre: Diesel
+        électrique: 
+          titre: Électrique
+        hybride: 
+          titre: Hybride
+        autre: 
+          titre: Autre
+
+tarif cheval fiscal:
+  valeur: 51.00€/CV

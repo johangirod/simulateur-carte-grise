@@ -1,0 +1,6 @@
+node_modules
+.yarn
+model-template.model.json
+index.d.ts
+index.js
+dist
